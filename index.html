@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+       <div class="wraper">
+        <div class="inputfield">
+        <input type="number" value="" id="inputfield1" placeholder="Enter The From Value " >
+        <input type="number" value="" id="inputfield2" placeholder="Enter The To Value ">
+        <div class="buttons">
+            <button type="button" onclick="calculate(this)">Print a numbers</button>
+            <button type="button" onclick="calculate(this)">Sum of numbers</button>
+            <button type="button" onclick="calculate(this)">Print the odd numbers</button>
+        </div>
+        </div>
+         <div class="res" id="result"></div>
+       </div>
+
+       <script>
+           const calculate = (j) => {
+               let num = parseInt(document.getElementById("inputfield1").value);      
+               let num1 = parseInt(document.getElementById("inputfield2").value);
+               let totel = '';   
+               let sum = 0;
+               //Code for print a numbers
+                   if(j.innerText === "Print a numbers") {
+                          for(let i = num; i <= num1; i++) { 
+                            totel +=  i + '<br>';
+                            document.getElementById("result").innerHTML = "Printed Numbers Are :" +'<br>' + totel;
+                        }
+                   }
+               //Code for multiplication of numbers
+                     else if(j.innerText === "Sum of numbers") { 
+                          for(let i = num; i <= num1; i++) {
+                             sum += i;
+                             totel +=  sum + '<br>';
+                             document.getElementById("result").innerHTML = "Sum of Numbers is :" + "<br>" + totel;
+                          }   
+                     }   
+                //code for find a odd numbers
+                     else if(j.innerText === "Print the odd numbers") {
+                        for(let i = num; i <= num1; i++) {
+                            if(i % 2 === 1) {
+                               totel +=  i + '<br>';
+                               document.getElementById("result").innerHTML = "Odd Numbers Are :" +'<br>' + totel;
+                            }
+                        }
+                     }     
+           }
+          
+       </script>
+    </body>
+</html>
